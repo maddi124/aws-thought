@@ -5,10 +5,10 @@ const params = (fileName) => {
     const fileType = myFile[myFile.length - 1];
   
     const imageParams = {
-      // Replace the <My_Bucket_Name> with the name of your own S3 bucket
-      Bucket: 'user-images-58aa3414-b951-4f49-9a15-be2272ff8c84',
+      Bucket: config.bucket,
       Key: `${uuidv4()}.${fileType}`,
       Body: fileName.buffer,
+      ACL: 'public-read', // allow read access to this file
     };
   
     return imageParams;
