@@ -7,8 +7,6 @@ const ThoughtForm = () => {
   });
   const [characterCount, setCharacterCount] = useState(0);
   const fileInput = useRef(null);
-
-
   // update state based on form input changes
   const handleChange = (event) => {
     if (event.target.value.length <= 280) {
